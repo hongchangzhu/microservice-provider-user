@@ -2,19 +2,17 @@ server:
   port: 9002
 spring:
   application:
-    name: user-service #服务名，将注册到eureka注册中心
+    name: user-service #服务名，将注册到eureka注册中心 
 eureka:
   instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
-    #leaseRenewalIntervalInSeconds: 1 #租期更新时间即那个，默认30秒
-    #leaseExpirationDurationInSeconds: 2 #租期到期时间，默认90秒
+    status-page-url-path: ${management.context-path}/info
+    health-check-url-path: ${management.context-path}/health
+    #leaseRenewalIntervalInSeconds: 1 #租期更新时间即那个，默认30秒 
+    #leaseExpirationDurationInSeconds: 2 #租期到期时间，默认90秒 
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/ #注册地址，eureka服务地址
-    healthcheck:
-      enabled: true #开启监控检查，需要依赖spring-boot-starter-actuator
+      defaultZone: http://root:123456@localhost:8761/register-center/eureka/  #注册地址，eureka服务地址      
       
-feign:
-  hystrix:
-    enabled: true #启用feign的hystrix，默认启用
+#feign:
+#  hystrix:
+#    enabled: true #启用feign的hystrix，默认启用
