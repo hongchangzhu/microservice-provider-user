@@ -1,6 +1,5 @@
 package com.netsframe.user.rest;
 
-import org.mircoservice.org.client.OrgServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +11,13 @@ import com.netsframe.user.service.UserService;
 public class UserController {
 	@Autowired
 	UserService userService;
-	@Autowired
-	OrgServiceClient orgServiceClient;
+//	@Autowired
+//	OrgServiceClient orgServiceClient;
 
 	@RequestMapping("/user/query/{id}")
 	public String query(@PathVariable("id") String id) {
-		String org = orgServiceClient.queryOrg("");
+		String org = userService.queryOrg("");
+		//String org = orgServiceClient.queryOrg(id);
 		return "昊哥哥所属组织：" + org;
 	}
 }
