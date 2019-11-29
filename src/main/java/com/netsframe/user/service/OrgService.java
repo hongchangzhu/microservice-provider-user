@@ -2,6 +2,7 @@ package com.netsframe.user.service;
 
 import com.netsframe.user.service.fallback.OrgServiceFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

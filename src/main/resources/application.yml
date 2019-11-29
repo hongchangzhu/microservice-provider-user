@@ -13,6 +13,10 @@ eureka:
     serviceUrl:
       defaultZone: http://root:123456@localhost:8761/register-center/eureka/  #注册地址，eureka服务地址      
       
-#feign:
+feign:
+  httpclient:
+    enabled: true
+  okhttp:
+    enabled: false
 #  hystrix:
 #    enabled: true #启用feign的hystrix，默认启用
